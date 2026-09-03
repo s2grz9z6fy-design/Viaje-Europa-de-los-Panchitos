@@ -1,13 +1,8 @@
-Acá tenés el código actualizado con todos tus retoques, incluyendo la Verificación Analítica de Rehogado y el quesito extra.
-
-Como ya tenés el repositorio armado en GitHub, solo tenés que entrar a tu archivo `index.html`, tocar el **ícono del lápiz** (editar), borrar el código viejo, pegar este nuevo y volver a tocar **Commit changes**. En un par de minutos se actualiza solo en el mismo link.
-
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Google Drive - Error 403: Archivos Restringidos</title>
   <link rel="icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,11 +20,15 @@ Como ya tenés el repositorio armado en GitHub, solo tenés que entrar a tu arch
       font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: #f8f9fa;
       color: #202124;
+      overflow-x: hidden;
+    }
+    .main-container {
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 16px;
+      width: 100%;
     }
     .card {
       background: #ffffff;
@@ -208,75 +207,76 @@ Como ya tenés el repositorio armado en GitHub, solo tenés que entrar a tu arch
 </head>
 <body>
 
-  <div class="card">
-    <div class="header">
-      <img src="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png" alt="Google Drive Logo">
-      <div class="header-title">Google Drive &bull; Centro de Almacenamiento</div>
-    </div>
+  <div class="main-container">
+    <div class="card">
+      <div class="header">
+        <img src="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png" alt="Google Drive Logo">
+        <div class="header-title">Google Drive &bull; Centro de Almacenamiento</div>
+      </div>
 
-    <div class="content">
-      <div class="error-banner">
-        <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
-        <div class="error-banner-text">
-          <strong>Error 403: Embargo Judicial del Álbum</strong>
-          El algoritmo de Google Drive ha emitido una medida cautelar sobre la carpeta. El acceso se encuentra restringido por la Corte Suprema de la Nube debido a un "Acuerdo Verbal Pendiente" sin legislar, registrado en formato de audio de proximidad ("avisame si querés venir a cocinar en verano").
+      <div class="content">
+        <div class="error-banner">
+          <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+          <div class="error-banner-text">
+            <strong>Error 403: Embargo Judicial del Álbum</strong>
+            El algoritmo de Google Drive ha emitido una medida cautelar sobre la carpeta. El acceso se encuentra restringido por la Corte Suprema de la Nube debido a un "Acuerdo Verbal Pendiente" sin legislar, registrado en formato de audio de proximidad ("avisame si querés venir a cocinar en verano").
+          </div>
         </div>
-      </div>
 
-      <div class="badge-bar">
-        <span class="badge">Expediente C-2027</span>
-        <span class="badge">Unicameral Culinaria</span>
-        <span class="badge">VAR Activo</span>
-      </div>
-
-      <h1>BOLETÍN OFICIAL — CONVOCATORIA A SESIÓN EXTRAORDINARIA GASTRONÓMICA</h1>
-
-      <p>Estimado <strong>Mateo Gierer</strong>:</p>
-      <p>Para levantar el embargo de los archivos y evitar un juicio político por abandono de persona (y de estómago), el usuario debe jurar su cargo como <strong>Distribuidor de Juego Culinario del Campamento de Verano 2027</strong>.</p>
-      <p>Para destrabar el sistema, deberá sancionar y acatar los siguientes artículos:</p>
-
-      <div class="articles">
-        <div class="article-item">
-          <strong>Art. 1 - Cobertura de la Primicia:</strong> Manejar la presión mediática de la prensa hambrienta y evitar a toda costa la <em>fake news</em> de "en cinco comemos".
+        <div class="badge-bar">
+          <span class="badge">Expediente C-2027</span>
+          <span class="badge">Unicameral Culinaria</span>
+          <span class="badge">VAR Activo</span>
         </div>
-        <div class="article-item">
-          <strong>Art. 2 - Aplicación del VAR (Verificación Analítica de Rehogado):</strong> Auditar los tiempos y forma de cocción y cobrar posición adelantada a cualquier integrante que intente robar ingredientes antes del silbatazo inicial.
+
+        <h1>BOLETÍN OFICIAL — CONVOCATORIA A SESIÓN EXTRAORDINARIA GASTRONÓMICA</h1>
+
+        <p>Estimado <strong>Mateo Gierer</strong>:</p>
+        <p>Para levantar el embargo de los archivos y evitar un juicio político por abandono de persona (y de estómago), el usuario debe jurar su cargo como <strong>Distribuidor de Juego Culinario del Campamento de Verano 2027</strong>.</p>
+        <p>Para destrabar el sistema, deberá sancionar y acatar los siguientes artículos:</p>
+
+        <div class="articles">
+          <div class="article-item">
+            <strong>Art. 1 - Cobertura de la Primicia:</strong> Manejar la presión mediática de la prensa hambrienta y evitar a toda costa la <em>fake news</em> de "en cinco comemos".
+          </div>
+          <div class="article-item">
+            <strong>Art. 2 - Aplicación del VAR (Verificación Analítica de Rehogado):</strong> Auditar los tiempos y forma de cocción y cobrar posición adelantada a cualquier integrante que intente robar ingredientes antes del silbatazo inicial.
+          </div>
+          <div class="article-item">
+            <strong>Art. 3 - Debate Unicameral:</strong> Defender su táctica y estrategia ante el recinto (la mesada) cuando la comida amenace con pegarse en el fondo de la olla, logrando consenso sin que vuele una espumadera.
+          </div>
+          <div class="article-item">
+            <strong>Art. 4 - Ejecución del Decreto Final:</strong> Ratificar con fuerza de ley la respuesta afirmativa a la solicitud que quedó trabada en la memoria caché desde nuestra despedida.
+          </div>
         </div>
-        <div class="article-item">
-          <strong>Art. 3 - Debate Unicameral:</strong> Defender su táctica y estrategia ante el recinto (la mesada) cuando la comida amenace con pegarse en el fondo de la olla, logrando consenso sin que vuele una espumadera.
+
+        <div class="benefits">
+          <strong>Beneficios de la Inmunidad Culinaria:</strong>
+          <ul>
+            <li>Levantamiento inmediato del secreto de sumario sobre el álbum de fotos de Europa.</li>
+            <li>Fueros parlamentarios en la cocina (derecho absoluto a armar el 11 titular de los ingredientes y picar antes que el resto (Habilitado el 😉 quesito extra)).</li>
+            <li>Evitar que el sistema colapse y procedamos a declarar el estado de sitio a base de galletitas de agua.</li>
+          </ul>
         </div>
-        <div class="article-item">
-          <strong>Art. 4 - Ejecución del Decreto Final:</strong> Ratificar con fuerza de ley la respuesta afirmativa a la solicitud que quedó trabada en la memoria caché desde nuestra despedida.
+
+        <div class="warning-text">
+          * Haga clic en ACEPTAR (o emita su voto positivo por WhatsApp) para confirmar el cargo. En caso de abstención o rechazo, la carpeta será vetada y formateada permanentemente.
         </div>
-      </div>
 
-      <div class="benefits">
-        <strong>Beneficios de la Inmunidad Culinaria:</strong>
-        <ul>
-          <li>Levantamiento inmediato del secreto de sumario sobre el álbum de fotos de Europa.</li>
-          <li>Fueros parlamentarios en la cocina (derecho absoluto a armar el 11 titular de los ingredientes y picar antes que el resto (Habilitado el 😉 quesito extra)).</li>
-          <li>Evitar que el sistema colapse y procedamos a declarar el estado de sitio a base de galletitas de agua.</li>
-        </ul>
-      </div>
+        <div class="actions">
+          <button class="btn btn-primary" onclick="aceptarCargo()">VOTAR A FAVOR / ACEPTAR CARGO (Desbloquear)</button>
+          <button class="btn btn-secondary" id="btnRechazar" onmouseover="escapar()" onclick="escapar()">Abstenerse / Rechazar Moción</button>
+        </div>
 
-      <div class="warning-text">
-        * Haga clic en ACEPTAR (o emita su voto positivo por WhatsApp) para confirmar el cargo. En caso de abstención o rechazo, la carpeta será vetada y formateada permanentemente.
-      </div>
-
-      <div class="actions">
-        <button class="btn btn-primary" onclick="aceptarCargo()">VOTAR A FAVOR / ACEPTAR CARGO (Desbloquear)</button>
-        <button class="btn btn-secondary" id="btnRechazar" onmouseover="escapar()" onclick="escapar()">Abstenerse / Rechazar Moción</button>
-      </div>
-
-      <div class="footer-note">
-        Google LLC &bull; Protocolo de Autenticación de Voluntades v2.7 &bull; Córdoba, Argentina
+        <div class="footer-note">
+          Google LLC &bull; Protocolo de Autenticación de Voluntades v2.7 &bull; Córdoba, Argentina
+        </div>
       </div>
     </div>
   </div>
 
   <script>
     function aceptarCargo() {
-      // Tira papelitos de festejo
       confetti({
         particleCount: 120,
         spread: 70,
@@ -285,7 +285,6 @@ Como ya tenés el repositorio armado en GitHub, solo tenés que entrar a tu arch
 
       setTimeout(() => {
         alert("¡Moción aprobada por unanimidad! Redirigiendo a la confirmación oficial...");
-        // Abre WhatsApp con el mensaje preescrito
         window.location.href = "https://api.whatsapp.com/send?text=%C2%A1Buenas!%20Ac%C3%A1%20Mateo.%20Queda%20promulgado%20el%20decreto:%20ACEPTO%20el%20cargo%20de%20Cocinero%20del%20Campamento.%20Liberame%20las%20fotos.";
       }, 900);
     }
@@ -303,5 +302,3 @@ Como ya tenés el repositorio armado en GitHub, solo tenés que entrar a tu arch
   </script>
 </body>
 </html>
-
-```
