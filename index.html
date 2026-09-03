@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Drive - Error 403: Archivos Restringidos</title>
+  <link rel="icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8f9fa;
+      color: #202124;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+    .card {
+      background: #ffffff;
+      max-width: 620px;
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #dadce0;
+      box-shadow: 0 1px 3px rgba(60,64,67, 0.12), 0 1px 2px rgba(60,64,67, 0.24);
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid #f1f3f4;
+    }
+    .header img {
+      width: 36px;
+      height: 36px;
+    }
+    .header-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 18px;
+      color: #3c4043;
+      font-weight: 500;
+    }
+    .content {
+      padding: 24px;
+    }
+    .error-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background-color: #fef7e0;
+      border-left: 4px solid #f9ab00;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .error-banner svg {
+      flex-shrink: 0;
+      fill: #b06000;
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+    }
+    .error-banner-text {
+      font-size: 13px;
+      color: #3c4043;
+      line-height: 1.4;
+    }
+    .error-banner-text strong {
+      color: #202124;
+      display: block;
+      margin-bottom: 2px;
+    }
+    h1 {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 20px;
+      line-height: 1.3;
+      color: #d93025;
+      margin-bottom: 14px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #3c4043;
+      margin-bottom: 14px;
+    }
+    .badge-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .badge {
+      background: #e8f0fe;
+      color: #1967d2;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .articles {
+      background: #fdfdfd;
+      border: 1px solid #e8eaed;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .article-item {
+      margin-bottom: 12px;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: #3c4043;
+    }
+    .article-item:last-child {
+      margin-bottom: 0;
+    }
+    .article-item strong {
+      color: #1a73e8;
+      font-weight: 600;
+    }
+    .benefits {
+      font-size: 13px;
+      color: #3c4043;
+      background-color: #f1f8e9;
+      border: 1px solid #c8e6c9;
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin-bottom: 24px;
+    }
+    .benefits ul {
+      margin-left: 18px;
+      margin-top: 6px;
+    }
+    .benefits li {
+      margin-bottom: 4px;
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+    }
+    .btn {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 12px 20px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: block;
+    }
+    .btn-primary {
+      background-color: #1a73e8;
+      color: #ffffff;
+      box-shadow: 0 1px 2px rgba(66,133,244, 0.3);
+    }
+    .btn-primary:hover {
+      background-color: #1557b0;
+      box-shadow: 0 2px 6px rgba(66,133,244, 0.4);
+    }
+    .btn-secondary {
+      background-color: #f1f3f4;
+      color: #5f6368;
+    }
+    .btn-secondary:hover {
+      background-color: #e8eaed;
+      color: #202124;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 11px;
+      color: #80868b;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="header">
+      <img src="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png" alt="Google Drive Logo">
+      <div class="header-title">Google Drive &bull; Centro de Almacenamiento</div>
+    </div>
+
+    <div class="content">
+      <div class="error-banner">
+        <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+        <div class="error-banner-text">
+          <strong>Error 403: Embargo Judicial del Álbum</strong>
+          La carpeta "Viaje Europa de los Panchitos" posee una medida cautelar por incumplimiento de pacto verbal no legislado.
+        </div>
+      </div>
+
+      <div class="badge-bar">
+        <span class="badge">Expediente C-2027</span>
+        <span class="badge">Unicameral Culinaria</span>
+        <span class="badge">VAR Activo</span>
+      </div>
+
+      <h1>SESIÓN EXTRAORDINARIA — REQUERIMIENTO GASTRONÓMICO</h1>
+
+      <p>Estimado <strong>Mateo Gierer</strong>:</p>
+      <p>Para levantar el embargo de las fotos de Europa y evitar un juicio político por abandono de estómagos, la Comisión Directiva solicita su inmediata jura como <strong>Director Técnico y Cocinero Titular del Campamento de Verano 2027</strong>.</p>
+
+      <div class="articles">
+        <div class="article-item">
+          <strong>Art. 1 — Cobertura de la Primicia:</strong> Deberá lidiar con la prensa hambrienta y abstenerse de emitir la clásica <em>fake news</em>: «ya casi está, quedan 5 minutitos».
+        </div>
+        <div class="article-item">
+          <strong>Art. 2 — Intervención del VAR:</strong> Verificación de Arroz Recocido obligatoria antes de servir y tarjeta roja directa a quien intente meter la mano en la olla antes del silbatazo inicial.
+        </div>
+        <div class="article-item">
+          <strong>Art. 3 — Debate Unicameral:</strong> Deberá defender su proyecto de menú en el recinto de las hornallas, logrando consenso sin que vuele una espumadera.
+        </div>
+        <div class="article-item">
+          <strong>Art. 4 — Ratificación del Decreto:</strong> Responder con fuerza de ley afirmativa a la moción susurrada al oído durante la despedida en Argentina.
+        </div>
+      </div>
+
+      <div class="benefits">
+        <strong>Fueros e Inmunidad Culinaria garantizados:</strong>
+        <ul>
+          <li>Acceso irrestricto y levantamiento del secreto de sumario sobre el álbum de fotos.</li>
+          <li>Fueros parlamentarios para probar comida y picar ingredientes antes que el resto.</li>
+          <li>Evitar que el campamento colapse y declaremos estado de sitio a base de fideos blancos.</li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" onclick="aceptarCargo()">VOTAR A FAVOR / ACEPTAR CARGO (Desbloquear)</button>
+        <button class="btn btn-secondary" id="btnRechazar" onmouseover="escapar()" onclick="escapar()">Abstenerse / Rechazar Moción</button>
+      </div>
+
+      <div class="footer-note">
+        Google LLC &bull; Protocolo de Autenticación de Voluntades v2.7 &bull; Córdoba, Argentina
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function aceptarCargo() {
+      // Tira papelitos de festejo
+      confetti({
+        particleCount: 120,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+
+      setTimeout(() => {
+        alert("¡Moción aprobada por unanimidad! Redirigiendo a la confirmación oficial...");
+        // Abre WhatsApp con el mensaje preescrito
+        window.location.href = "https://api.whatsapp.com/send?text=%C2%A1Buenas!%20Ac%C3%A1%20Mateo.%20Queda%20promulgado%20el%20decreto:%20ACEPTO%20el%20cargo%20de%20Cocinero%20del%20Campamento.%20Liberame%20las%20fotos.";
+      }, 900);
+    }
+
+    function escapar() {
+      const btn = document.getElementById('btnRechazar');
+      const x = Math.floor(Math.random() * 160) - 80;
+      const y = Math.floor(Math.random() * 100) - 50;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+      
+      setTimeout(() => {
+        alert("⚠️ VETO DENEGADO: La legislatura no admite votos negativos para este cargo.");
+      }, 200);
+    }
+  </script>
+</body>
+</html>
